@@ -1,0 +1,220 @@
+html{
+    background-color: #ebeae9;
+    
+}
+body{
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    min-width: 634px;
+    min-height: 590px;
+}
+header{
+    text-align: center;
+    font-size: x-large;
+}
+.navBuck-main{
+    display: flex;
+    flex-grow: 1;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 77%;
+    padding-left: 5px;
+}
+
+.container{
+    width: calc(100%/3);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.container hr{
+    width: 70%;
+}
+.selector-of-ingredients{
+    font-size: 12px;
+    width: 85%;
+    min-height: 31px;
+}
+.container p{
+    margin: 0px 0 5px 0;
+}
+.nav-bucket{
+    display: flex;
+    flex-direction: column;
+    width: 23vw;
+    min-width: 211px;
+    margin-left: 5px;
+    align-items: center;
+    justify-content: space-around;
+    height: 70%;
+    min-height: 416px;
+    max-height: 582px;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+    0 0 4px 2px rgb(122, 122, 122),
+    0 0 4px 2px rgba(122, 122, 122);
+    border-radius: 4px;
+    min-width: 211px;
+    width: 70%;
+}
+
+nav button{
+    appearance: none;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    font-size: 17px;
+}
+nav button:hover{
+    background-color: #f6d000;
+    color: white;
+}
+nav button:focus{
+    outline: none;
+    background-color: #f6d000;
+    color: white;
+}
+nav button:active{
+    background-color: #f5e37a;
+    color: white;
+}
+
+
+
+.first-button{
+    border-radius: 4px 4px 0 0px;
+}
+.last-button{
+    border-radius: 0px 0px 4px 4px;
+}
+.food-img{
+    background-color: #f6c900;
+    
+    width: 80%;
+}
+
+
+.bucket{
+    width: 70%;
+    min-width: 211px;
+    margin-top: 40px;
+}
+
+.name-quantity{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px 0 15px ;
+    width: 85%;
+}
+.name-quantity p{
+    font-size: 13px;
+    margin: 0;
+}
+.bucket-label{
+    text-align: end;
+    font-size: 30px;
+    padding: 7px 10px 7px 0 ;
+    margin: 0;
+    background-color: #f5c300;
+    color: white;
+    font-weight: 500;
+}
+.grocery-list{
+    background-color: #f6d846;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bucket hr{
+    width: 87%;
+    color: #f3ad00;
+}
+.summary{
+    text-align: center;
+    margin: 0;
+    padding: 10px 0 10px 0;
+}
+.grocery-list button{
+    background-color: #808080;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    margin: 15px 0 20px 0;
+    height: 2em;
+    width: 12em;
+    cursor: pointer;
+}
+.grocery-list button:active{
+    background-color: #c2c2c2;
+}
+.price{
+    color: red;
+    font-size: 15px;
+}
+.quantity-choice-label{
+    font-size: 11px;
+}
+.amount-minus-plus{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    appearance: none;
+
+}
+.amount-minus-plus button{
+    border: solid 2px #c2c2c2;
+    border-radius: 15px;
+    min-width: 30px; 
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+    appearance: none;
+    color: #c2c2c2;
+    text-align: center;
+    background-color: #ffffff;
+    font-size: 21px;
+    padding: 0 0 19px 0px;
+}
+.amount{
+    width: 60px;
+    background-color: white;
+    border: solid 2px rgb(173, 173, 173);
+    margin: 0 15px 0 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subway-img{
+    background: linear-gradient(45deg, green, yellow 70%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: xx-large;
+}
+.add-button{
+    background-color: #f5c300;
+    color: white;
+    font-size: 13px;
+    width: 50%;
+    border-radius: 2px;
+    min-width: 85px;
+    appearance: none;
+    border: none;
+    box-shadow: 0 0 2px 1px rgb(146, 146, 146);
+    cursor: pointer;
+    margin-top: 10px;
+}
+.add-button:active{
+    background-color: #e7d274;
+}

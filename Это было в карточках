@@ -1,0 +1,83 @@
+<div class="container">
+          <div class="subway-img">Subway</div>
+          <div class="food-img">Картика еды</div>
+          <p>Сабвэй клаб</p>
+          <hr>
+          <p class="selector-of-ingredients">Индейка, ветчина, ростбиф, соус и овощи на выбор</p>
+          <hr>
+          <p class="price">Цена: 180 руб.</p>
+          <p class="quantity-choice-label">КОЛИЧЕСТВО</p>
+          <div class="amount-minus-plus">
+            <button>-</button>
+            <div class="amount"><div>1</div></div>
+            <button>+</button>
+          </div>
+          <button class="add-button">В КОРЗИНУ</button>
+        </div>
+        <div class="container">
+          <div class="subway-img">Subway</div>
+          <div class="food-img">Картика еды</div>
+          <p>Альпийский</p>
+          <hr>
+          <p class="selector-of-ingredients">Альпийские колбаски 2 шт, соус и овощи на выбор</p>
+          <hr>
+          <p class="price">Цена: 180 руб.</p>
+          <p class="quantity-choice-label">КОЛИЧЕСТВО</p>
+          <div class="amount-minus-plus">
+            <button>-</button>
+            <div class="amount"><div>1</div></div>
+            <button>+</button>
+          </div>
+          <button class="add-button">В КОРЗИНУ</button>
+        </div>
+        <div style="margin-top: 50px; display: flex; flex-grow: 1;">
+          <div class="container">
+            <div class="subway-img">Subway</div>
+            <div class="food-img">Картика еды</div>
+            <p>Lorem ipsum</p>
+            <hr>
+            <p class="selector-of-ingredients">Соус и овощи на выбор</p>
+            <hr>
+            <p class="price">Цена: 110 руб.</p>
+            <p class="quantity-choice-label">КОЛИЧЕСТВО</p>
+            <div class="amount-minus-plus">
+              <button>-</button>
+              <div class="amount"><div>1</div></div>
+              <button>+</button>
+            </div>
+            <button class="add-button">В КОРЗИНУ</button>
+          </div>
+          <div class="container">
+            <div class="subway-img">Subway</div>
+            <div class="food-img">Картика еды</div>
+            <p>Lorem ipsum</p>
+            <hr>
+            <p class="selector-of-ingredients">Соус и овощи на выбор</p>
+            <hr>
+            <p class="price">Цена: 110 руб.</p>
+            <p class="quantity-choice-label">КОЛИЧЕСТВО</p>
+            <div class="amount-minus-plus">
+              <button>-</button>
+              <div class="amount"><div>1</div></div>
+              <button>+</button>
+            </div>
+            <button class="add-button">В КОРЗИНУ</button>
+          </div>
+          <div class="container">
+            <div class="subway-img">Subway</div>
+            <div class="food-img">Картика еды</div>
+            <p>Lorem ipsum</p>
+            <hr>
+            <p class="selector-of-ingredients">Соус и овощи на выбор</p>
+            <hr>
+            <p class="price">Цена: 110 руб.</p>
+            <p class="quantity-choice-label">КОЛИЧЕСТВО</p>
+            <div class="amount-minus-plus">
+              <button>-</button>
+              <div class="amount"><div>1</div></div>
+              <button>+</button>
+            </div>
+            <button class="add-button">В КОРЗИНУ</button>
+          </div>
+
+        </div>
