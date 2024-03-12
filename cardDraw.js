@@ -1,6 +1,6 @@
 "use strict";
-function draw(){
-    for (let i = 0; i < 2; i++) {
+function drawCards(){
+    for (let i = 0; i < 50; i++) {
 
         let mainReference = document.getElementById("main")
     
@@ -9,7 +9,7 @@ function draw(){
     
         let containerSubwayImg = document.createElement("div")
         containerSubwayImg.className = "subway-img"
-        containerSubwayImg.textContent = "lorem"
+        containerSubwayImg.textContent = `s`
         divContainer.append(containerSubwayImg)
     
         let containerFoodImg = document.createElement("div")
@@ -71,13 +71,18 @@ function draw(){
         mainReference.append(divContainer)
     }
 }
-
-
-
-function clear(){
+function clearCards(){
     let main = document.getElementById("main")
-    console.log(main)
     while (main.firstChild) {
         main.removeChild(main.firstChild);
     }
+}
+
+document.querySelector("#shaurma-button").onclick = function(){
+    clearCards()
+    drawCards()
+}
+document.querySelector("#sandwich").onclick = function(){
+    clearCards()
+    drawCards()
 }

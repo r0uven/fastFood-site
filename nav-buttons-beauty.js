@@ -17,16 +17,14 @@ function nonActive(active){
 
 
 //Отслежвание всех кнопок в навигации
-(function Example() {
-  
-    navButtons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        btn.style.background = "#f6d000"
-        btn.style.color = "white"
-        nonActive(btn)
-      });
-    })
-}());
+
+navButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+    btn.style.background = "#f6d000"
+    btn.style.color = "white"
+    nonActive(btn)
+    });
+})
 
 //hover и active из css
 navButtons.forEach(element => {
