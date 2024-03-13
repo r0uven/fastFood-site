@@ -18,35 +18,45 @@ body {
 /* позиционирование самого модального окна */
 .modalActive {
     position: absolute;
-    width: 350px;
+    width: 800px;
     height: 495px;
     top: calc(50% - 250px);
     left: calc(50% - 175px);
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: rgb(255, 255, 255);
     cursor: default;
-    padding: 40px 20px;
 }
 
 /* кнопочка закрытия модального окна */
-.modalClose {
-    font-family: var(--font-regular);
-    position: absolute;
-    right: 5px;
-    top: 5px;
+.label-and-close {    
+    display: flex;
+    background-color: #f5c300;
+    border-radius: 5px 5px 0 0;
+}
+.label{
+    flex-grow: 1;
+    text-align: center;
+    font-size: 25px;
+    margin: 15px 0 15px 0;
+    color: white;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* сама картинка кнопочки закрытия */
+.label-and-close img {
+    margin: 3px;
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
 
-/* сама картинка кнопочки закрытия */
-.modalClose img {
-    margin: 3px;
-    width: 24px;
-    height: 24px;
+/* делаем позиционирование внутренних элементов относительно модального окна */
+.food-settings {
+    background-color: #e0e0e0;
+    height: 70%;
 }
 
-/* делаем позиционирование внутренних элементов относительно модального окна */
-.modalWindow {
-    position: relative;
+.button-settings{
+    display: flex;
 }

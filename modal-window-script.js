@@ -3,7 +3,7 @@ navButtons = nav.querySelectorAll("button")
 navButtons.forEach(function(btn) {
     btn.addEventListener('click', function() {
     let main = document.querySelector("main")
-    let containersAddButtons = main.querySelectorAll(".container")
+    let containersAddButtons = main.querySelectorAll(".add-button")
     containersAddButtons.forEach(function(btn){
         // событие нажатия на триггер открытия модального окна
         btn.addEventListener("click", function () {
@@ -16,7 +16,7 @@ navButtons.forEach(function(btn) {
             }
         
             // позиционируем наше окно по середине, где 175 - половина ширины модального окна
-            modalActive.style.left = "calc(50% - " + (175 - scrollbarWidth / 2) + "px)";
+            modalActive.style.left = "calc(50% - " + (400 - scrollbarWidth / 2) + "px)";
         });
     })
     });
@@ -31,7 +31,7 @@ const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
 // привязываем необходимые элементы
 const bodyElementHTML = document.getElementsByTagName("body")[0];
 const modalBackground = document.getElementsByClassName("modalBackground")[0];
-const modalClose = document.getElementsByClassName("modalClose")[0];
+const modalClose = document.getElementById("close-img");
 const modalActive = document.getElementsByClassName("modalActive")[0];
 
 // функция для корректировки положения body при появлении ползунка прокрутки
