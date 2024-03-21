@@ -1,3 +1,5 @@
+"use strict";
+//накидываем ивент окрытия модального окна на все карточки из меню навигации
 nav = document.querySelector("nav")
 navButtons = nav.querySelectorAll("button")
 navButtons.forEach(function(btn) {
@@ -17,12 +19,11 @@ navButtons.forEach(function(btn) {
         
             // позиционируем наше окно по середине, где 175 - половина ширины модального окна
             modalActive.style.left = "calc(50% - " + (400 - scrollbarWidth / 2) + "px)";
+            document.getElementsByClassName("modal-first-button")[0].click()
         });
     })
     });
 })
-// устанавливаем триггер для модального окна (название можно изменить)
-
 
 // получаем ширину отображенного содержимого и толщину ползунка прокрутки
 const windowInnerWidth = document.documentElement.clientWidth;
@@ -51,12 +52,194 @@ modalClose.addEventListener("click", function () {
     }
 });
 
-// // закрытие модального окна на зону вне окна, т.е. на фон
-// modalBackground.addEventListener("click", function (event) {
-//     if (event.target === modalBackground) {
-//         modalBackground.style.display = "none";
-//         if (windowInnerWidth >= 1366) {
-//             bodyMargin();
-//         }
-//     }
-// });
+
+//кнопки в модальном окне
+
+let modalButtons = document.querySelectorAll(".button-settings button")
+
+//Перекрашивание обратно
+function nonActiveModal(active){
+    modalButtons.forEach(element => {
+        if(active === element){
+        
+        }else{
+            element.style.background = "white"
+            element.style.color = "black"
+        }
+    });
+}
+
+
+//Отслежвание всех кнопок в модальном
+
+modalButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+    btn.style.background = "#d96746"
+    btn.style.color = "white"
+    nonActiveModal(btn)
+    });
+})
+
+//hover и active из css
+modalButtons.forEach(element => {
+    element.addEventListener('mouseover', () => {
+        if(element.style.background != "rgb(217, 103, 70)")
+        {
+            element.style.background = '#d66445';
+            element.style.color = "white"
+        }
+        element.addEventListener('mousedown', () => {
+
+            element.style.background = '#d99582';
+            element.style.color = "white"
+        
+        });
+        element.addEventListener('mouseout', () => {
+            if(element.style.background != "rgb(217, 103, 70)")
+            {
+                element.style.background = 'white';
+                element.style.color = "black"
+            }    
+        });
+    });
+});
+
+const modalIngredientSelectionWindow = document.getElementsByClassName("ingredient-selection-window")[0]
+const modalOrderResults = document.getElementsByClassName("order-results")[0]
+
+
+
+// отрисовка по нажатию кнопки готово!
+document.querySelector("#ready-button").onclick = function(){
+    
+    clearMenuModal()
+    
+    let readyImg = document.createElement("div")
+    readyImg.className = "ready-img"
+    readyImg.textContent = "Картинка"
+
+    let readySummary = document.createElement("div")
+    readySummary.className = "ready-summary"
+
+    let summaryLabel = document.createElement("div")
+    summaryLabel.textContent = "Ваш lorem готов!"
+    summaryLabel.className = "summary-label"
+    readySummary.appendChild(summaryLabel)
+
+    let summaryHr = document.createElement("hr")
+    summaryHr.style.marginTop = "0"
+    readySummary.appendChild(summaryHr)
+
+    let summarySize = document.createElement("div")
+    summarySize.textContent = "Размер: lorem"
+    readySummary.appendChild(summarySize)
+    
+    let summaryBread = document.createElement("div")
+    summaryBread.textContent = "Хлеб: lorem"
+    readySummary.appendChild(summaryBread)
+
+    let summaryVegetables = document.createElement("div")
+    summaryVegetables.textContent = "Овощи: lorem"
+    readySummary.appendChild(summaryVegetables)
+
+    let summarySauce = document.createElement("div")
+    summarySauce.textContent = "Соусы: lorem"
+    readySummary.appendChild(summarySauce)
+
+    let summaryfilling = document.createElement("div")
+    summaryfilling.textContent = "Начинка: lorem"
+    readySummary.appendChild(summaryfilling)
+
+
+    let summaryHr2 = document.createElement("hr") 
+    readySummary.appendChild(summaryHr2)
+
+    let summaryType = document.createElement("p")
+    summaryType.textContent = "lorem"
+    summaryType.className = "summary-type"
+    readySummary.appendChild(summaryType)
+
+    modalIngredientSelectionWindow.appendChild(readyImg)
+    modalIngredientSelectionWindow.appendChild(readySummary)
+
+    let modalAmountLabel = document.createElement("div")
+    modalAmountLabel.style.textAlign = "center"
+    modalAmountLabel.textContent = "КОЛИЧЕСТВО"
+    modalAmountLabel.style.fontSize = "11px"
+    modalOrderResults.appendChild(modalAmountLabel)
+
+    let modalAmount = document.createElement("div")
+    modalAmount.className = "modal-amount"
+    modalOrderResults.appendChild(modalAmount)
+
+    let modalPriceAndBuckBut = document.createElement("div")
+    modalPriceAndBuckBut.className = "price-button"
+
+    let price = document.createElement("div")
+    price.className = "modal-price"
+    price.textContent = "Цена: lorem"
+    
+    let inBucket = document.createElement("button")
+    inBucket.className = "modal-in-bucket"
+    inBucket.textContent = "В КОРЗИНУ"
+    
+
+    modalPriceAndBuckBut.appendChild(price)
+    modalPriceAndBuckBut.appendChild(inBucket)
+    
+    modalOrderResults.appendChild(modalPriceAndBuckBut)
+
+    let buttonMinus = document.createElement("button")
+    buttonMinus.textContent = "–"
+    modalAmount.append(buttonMinus)
+
+    let amount = document.createElement("div")
+    amount.className = "amount"
+    let amountContent = document.createElement("div")
+    amountContent.textContent = "1"
+    amount.append(amountContent)
+    modalAmount.append(amount)
+
+    let buttonPlus = document.createElement("button")
+    buttonPlus.textContent = "+"
+    modalAmount.append(buttonPlus)
+}
+document.querySelector("#size-button").onclick = function(){
+    clearMenuModal()
+    selectionCardsDraw()
+}
+function selectionCardsDraw(){
+    let container = document.createElement("div")
+    container.className = "container"
+    let cardImg = document.createElement("div")
+    cardImg.textContent = "Картинка"
+    container.appendChild(cardImg)
+
+    let cardLabel = document.createElement("div")
+    cardLabel.textContent = "lorem"
+    cardLabel.style.fontSize = '20px'
+    container.appendChild(cardLabel)
+
+    let cardHr = document.createElement("hr")
+    container.appendChild(cardHr)
+
+    let cardPrice = document.createElement("div")
+    cardPrice.textContent = "Цена: lorem"
+    cardPrice.className = "modal-price"
+    container.appendChild(cardPrice)
+    modalIngredientSelectionWindow.appendChild(container)
+
+    const totalPrice = document.createElement("div")
+    totalPrice.className = "modal-price"
+    totalPrice.textContent = "Итого: lorem"
+    totalPrice.style.margin = 0
+    modalOrderResults.appendChild(totalPrice)
+}
+function clearMenuModal(){
+    while (modalIngredientSelectionWindow.firstChild) {
+        modalIngredientSelectionWindow.removeChild(modalIngredientSelectionWindow.firstChild);
+    }
+    while (modalOrderResults.firstChild) {
+        modalOrderResults.removeChild(modalOrderResults.firstChild);
+    }
+}

@@ -19,8 +19,7 @@ body {
 .modalActive {
     position: absolute;
     width: 800px;
-    height: 495px;
-    top: calc(50% - 250px);
+    top: calc(50% - 300px);
     left: calc(50% - 175px);
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
@@ -54,9 +53,126 @@ body {
 /* делаем позиционирование внутренних элементов относительно модального окна */
 .food-settings {
     background-color: #e0e0e0;
-    height: 70%;
+    height: 350px;
+    padding-top: 20px;
 }
 
 .button-settings{
     display: flex;
+    flex-direction: row;
+    box-shadow:
+    0 0 4px 2px rgb(151, 151, 151),
+    0 0 4px 2px rgba(151, 151, 151);
+    border-radius: 4px;
+    position: relative;
+    left: 40px;
+    width: 90%;
+}
+.modal-first-button{
+    border-radius: 5px 0 0 5px;
+}
+.modal-last-button{
+    border-radius: 0px 5px 5px 0px;
+}
+.button-settings button{
+    appearance: none;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+.ingredient-selection-window{
+    height: 310px;
+    display: flex;
+    
+}
+.ready-img{
+    width: 35%;
+    text-align: center;
+    background-color: blueviolet;
+}
+.ready-summary{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 30px;
+    font-size: 18px;
+}
+.summary-label{
+    font-size: 23px;
+}
+.ready-summary hr{
+    width: 90%;
+    margin-left: 0;
+}
+.summary-type{
+    font-size: 23px;
+}
+.price-amount{
+    height: 90px;
+    margin-top: 11px;
+}
+
+.modal-amount{
+    display: flex;
+    justify-content: center;
+    appearance: none;
+    align-items: center;
+
+}
+.modal-amount button{
+    border: none;
+    appearance: none;
+    color: #c2c2c2;
+    text-align: center;
+    background-color: #ffffff;
+    font-size: 30px;
+    padding: 0;
+    margin-bottom: 5px;
+}
+.amount{
+    width: 60px;
+    background-color: white;
+    border: solid 2px rgb(173, 173, 173);
+    margin: 0 15px 0 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+}
+.modal-in-bucket{
+    background-color: #f5c300;
+    color: white;
+    font-size: 15px;
+    border-radius: 2px;
+    min-width: 107px;
+    min-height: 23px;
+    appearance: none;
+    border: none;
+    box-shadow: 0 0 2px 1px rgb(146, 146, 146);
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+.in-bucket:active{
+    background-color: #e7d274;
+}
+.modal-price{
+    font-size: 20px;
+    margin-right: 12px;
+    color: #db472d;
+    text-align: center;
+}
+.price-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-results{
+    padding: 10px 0 10px 0;
 }
