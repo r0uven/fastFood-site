@@ -232,3 +232,28 @@ nav button:active{
 .add-button:active{
     background-color: #e7d274;
 }
+.bucket-positions{
+    width: 90%;
+    overflow: scroll;
+    max-height: 300px;
+}
+.position-in-bucket{
+    background-color: #f0efed;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 12px;
+    margin-bottom: 13px;
+}
+.delete-img{
+    height: 20px;
+    width: 17px;
+    margin-left: 6px;
+    cursor: pointer;
+}
+.edit-img{
+    height: 20px;
+    width: 17px;
+    cursor: pointer;
+}

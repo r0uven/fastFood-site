@@ -58,7 +58,7 @@ modalClose.addEventListener("click", function () {
 let modalButtons = document.querySelectorAll(".button-settings button")
 
 //Перекрашивание обратно
-function nonActiveModal(active){
+function nonActiveModalButtons(active){
     modalButtons.forEach(element => {
         if(active === element){
         
@@ -76,7 +76,7 @@ modalButtons.forEach(function(btn) {
     btn.addEventListener('click', function() {
     btn.style.background = "#d96746"
     btn.style.color = "white"
-    nonActiveModal(btn)
+    nonActiveModalButtons(btn)
     });
 })
 
@@ -107,7 +107,18 @@ modalButtons.forEach(element => {
 const modalIngredientSelectionWindow = document.getElementsByClassName("ingredient-selection-window")[0]
 const modalOrderResults = document.getElementsByClassName("order-results")[0]
 
+let allModalContainers
 
+function nonActiveModalContainer(active){
+    allModalContainers.forEach(element => {
+        if(active === element){
+        
+        }else{
+            element.style.background = ""
+            element.style.boxShadow = ""
+        }
+    });
+}
 
 // отрисовка по нажатию кнопки готово!
 document.querySelector("#ready-button").onclick = function(){
@@ -182,8 +193,50 @@ document.querySelector("#ready-button").onclick = function(){
     let inBucket = document.createElement("button")
     inBucket.className = "modal-in-bucket"
     inBucket.textContent = "В КОРЗИНУ"
-    
+    inBucket.addEventListener('click', () =>{
+        let bucketPositions = document.getElementById("bucket-positions")
+        let positionInBucket = document.createElement("div")
+        positionInBucket.className = "position-in-bucket"
 
+        let title = document.createElement("div")
+        title.textContent = `lorem`
+        title.style.flexGrow = '1'
+        positionInBucket.appendChild(title)
+        
+        let editPosition = document.createElement("img")
+        editPosition.src = "Картинки/pencil.png"
+        editPosition.className = "edit-img"
+        editPosition.addEventListener('click', () =>{
+            // делаем модальное окно видимым
+            modalBackground.style.display = "block";
+        
+            // если размер экрана больше 1366 пикселей (т.е. на мониторе может появиться ползунок)
+            if (windowInnerWidth >= 1366) {
+                bodyMargin();
+            }
+        
+            // позиционируем наше окно по середине, где 175 - половина ширины модального окна
+            modalActive.style.left = "calc(50% - " + (400 - scrollbarWidth / 2) + "px)";
+            document.getElementsByClassName("modal-first-button")[0].click()
+        })
+        positionInBucket.appendChild(editPosition)
+
+        let deletePosition = document.createElement("img")
+        deletePosition.src = "Картинки/trash-can.png"
+        deletePosition.className = "delete-img"
+        deletePosition.addEventListener('click', () =>{
+            positionInBucket.remove()
+        })
+        positionInBucket.appendChild(deletePosition)
+    
+        bucketPositions.appendChild(positionInBucket)
+        modalBackground.style.display = "none";
+        if (windowInnerWidth >= 1366) {
+            bodyMargin();
+        }
+    })
+    
+    
     modalPriceAndBuckBut.appendChild(price)
     modalPriceAndBuckBut.appendChild(inBucket)
     
@@ -207,27 +260,57 @@ document.querySelector("#ready-button").onclick = function(){
 document.querySelector("#size-button").onclick = function(){
     clearMenuModal()
     selectionCardsDraw()
+    allModalContainers = document.querySelectorAll(".modal-container")
 }
 function selectionCardsDraw(){
-    let container = document.createElement("div")
-    container.className = "container"
-    let cardImg = document.createElement("div")
-    cardImg.textContent = "Картинка"
-    container.appendChild(cardImg)
+    for (let i = 0; i < 2; i++) {
+        let modalContainer = document.createElement("div")
+        modalContainer.className = "modal-container"
 
-    let cardLabel = document.createElement("div")
-    cardLabel.textContent = "lorem"
-    cardLabel.style.fontSize = '20px'
-    container.appendChild(cardLabel)
+        modalContainer.addEventListener("mouseover", () =>{
+            if(modalContainer.style.background !== 'rgb(245, 215, 66)')
+            {
+                modalContainer.style.background = '#f6d846'
+                modalContainer.style.boxShadow = '0 0 4px 2px rgb(151, 151, 151)'
+            }
+            
+        })
+        modalContainer.addEventListener("mousedown", () =>{
+            modalContainer.style.background = '#f5e076'
+        })
+        modalContainer.addEventListener("mouseout", () =>{
+            if(modalContainer.style.background === 'rgb(246, 216, 70)')
+            {
+                modalContainer.style.background = ''
+                modalContainer.style.boxShadow = ''
+            }
+            
+        })
+        modalContainer.addEventListener("click", () =>{
+            modalContainer.style.background = '#f5d742'
+            nonActiveModalContainer(modalContainer)
+        })
 
-    let cardHr = document.createElement("hr")
-    container.appendChild(cardHr)
+        
+        let cardImg = document.createElement("div")
+        cardImg.textContent = "Картинка"
+        modalContainer.appendChild(cardImg)
 
-    let cardPrice = document.createElement("div")
-    cardPrice.textContent = "Цена: lorem"
-    cardPrice.className = "modal-price"
-    container.appendChild(cardPrice)
-    modalIngredientSelectionWindow.appendChild(container)
+        let cardLabel = document.createElement("div")
+        cardLabel.textContent = "lorem"
+        cardLabel.style.fontSize = '20px'
+        modalContainer.appendChild(cardLabel)
+
+        let cardHr = document.createElement("hr")
+        modalContainer.appendChild(cardHr)
+
+        let cardPrice = document.createElement("div")
+        cardPrice.textContent = "Цена: lorem"
+        cardPrice.className = "modal-price"
+        modalContainer.appendChild(cardPrice)
+        modalIngredientSelectionWindow.appendChild(modalContainer)
+    }
+    
 
     const totalPrice = document.createElement("div")
     totalPrice.className = "modal-price"
@@ -243,3 +326,4 @@ function clearMenuModal(){
         modalOrderResults.removeChild(modalOrderResults.firstChild);
     }
 }
+

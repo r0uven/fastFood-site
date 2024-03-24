@@ -87,6 +87,7 @@ body {
 .ingredient-selection-window{
     height: 310px;
     display: flex;
+    justify-content: center;
     
 }
 .ready-img{
@@ -159,7 +160,7 @@ body {
     text-align: center;
     font-weight: bold;
 }
-.in-bucket:active{
+.modal-in-bucket:active{
     background-color: #e7d274;
 }
 .modal-price{
@@ -175,4 +176,19 @@ body {
 }
 .order-results{
     padding: 10px 0 10px 0;
+}
+.modal-container{
+    width: calc(100%/3.5);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px 30px 30px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.modal-container hr{
+    width: 70%;
 }
